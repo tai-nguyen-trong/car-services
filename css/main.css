@@ -1644,9 +1644,34 @@ button:focus {
   background: #2c3e50;
 }
 
-#carousel-area .carousel-item {
+/* #carousel-area .carousel-item {
   background-size: 100%;
+} */
+
+/* #carousel-area .carousel-item img {
+  width: 100%;  Hiển thị full màn hình theo chiều ngang 
+  height: auto;  Giữ nguyên tỷ lệ khung hình 
+  overflow: hidden;  Ẩn phần dư thừa của ảnh 
+  position: relative;  Cho phép sử dụng các kỹ thuật vị trí 
+  max-height: 50vh;  Hiển thị chỉ một phần của chiều cao, ví dụ 50% của chiều cao màn hình 
+} */
+
+#carousel-area .carousel-item {
+  width: 100%; /* Đảm bảo rằng carousel-item chiếm toàn bộ chiều ngang */
+  height: 0; /* Đặt chiều cao ban đầu là 0 */
+  padding-top: 50%; /* Padding-top sẽ chiếm 50% của chiều ngang, tạo ra một phần tử có chiều cao bằng một nửa chiều ngang */
+  position: relative; /* Cho phép sử dụng các kỹ thuật vị trí */
 }
+
+#carousel-area .carousel-item img {
+  width: 100%; /* Hiển thị full màn hình theo chiều ngang */
+  height: auto; /* Giữ nguyên tỷ lệ khung hình */
+  position: absolute; /* Đặt ảnh tại vị trí tuyệt đối bên trong phần tử cha */
+  top: 0; /* Đặt ảnh ở phía trên cùng của phần tử cha */
+  left: 0; /* Đặt ảnh ở phía trái của phần tử cha */
+}
+
+
 
 #carousel-area .carousel-item .carousel-caption {
   top: 32%;
